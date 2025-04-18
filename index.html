@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Password Strength Checker</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <!-- Theme Toggle -->
+  <div class="theme-toggle-wrapper">
+    <span>☀️</span>
+    <label class="theme-switch">
+      <input type="checkbox" id="toggleTheme"/>
+      <span class="slider"></span>
+    </label>
+    <span>🌙</span>
+  </div>
+
+  <div class="main-container">
+    <!-- Panel 1: Password Strength -->
+    <div class="panel">
+      <h2>Password Strength Checker</h2>
+      <div class="input-wrapper">
+        <input type="password" id="password" placeholder="Enter password" />
+        <button id="togglePassword">👁️</button>
+      </div>
+      <div class="strength-meter">
+        <div id="meterBar"></div>
+      </div>
+      <div id="strengthText">Strength: </div>
+    </div>
+
+    <!-- Generator Panel -->
+    <div class="panel">
+      <label for="lengthRange">Password Length: <span id="lengthValue">12</span></label>
+      <input type="range" id="lengthRange" min="6" max="32" value="12" />
+
+      <input type="text" id="generatedPassword" readonly class="input-with-buttons" />
+
+      <div class="button-group">
+        <button id="generateBtn">Generate</button>
+        <button id="copyBtn">📋 Copy</button>
+      </div>
+
+      <div class="strength-meter">
+        <div id="genMeterBar"></div>
+      </div>
+      <div id="genStrengthText">Strength:</div>
+    </div>
+  </div>
+
+  <!-- Info Button -->
+  <footer>
+    <button id="infoBtn">ℹ️ Info</button>
+  </footer>
+
+  <!-- Info Modal -->
+  <div id="infoModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>About This App 🔐</h2>
+      <p>
+        This web application is a secure and user-friendly tool developed by Irish Diane Lee Iniego. Here's what it offers:
+      </p>
+      
+      <ul class="info-list">
+        <li><span class="icon">🔍</span><strong>Password Strength Checker:</strong> Evaluates your password based on key factors like length, character variety, and repetition. Provides real-time feedback on its strength.</li>
+        <li><span class="icon">⚙️</span><strong>Password Generator:</strong> Generates strong, random passwords using a mix of uppercase, lowercase, numbers, and special characters. Adjust the length to meet your security needs.</li>
+        <li><span class="icon">🌗</span><strong>Theme Support:</strong> Toggle between light and dark modes for a more personalized and comfortable user experience.</li>
+        <li><span class="icon">🔒</span><strong>Privacy Focused:</strong> All password evaluations and generations happen locally in your browser, ensuring that your data stays private and secure.</li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
